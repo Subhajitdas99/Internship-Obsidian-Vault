@@ -27,7 +27,6 @@
 **Tasks:**  
 - Backend APIs: registration, verification, onboarding status  
 - Database tables: patients, profiles, verification_tokens  
-- Frontend: registration form, OTP input, onboarding slides  
 
 ---
 
@@ -50,48 +49,44 @@
 
 **Tasks:**  
 - Backend: APIs for doctor listing, slot selection, time booking, confirmation  
-- Frontend: appointment booking UI  
 
 ---
 
-### Week 3: Reschedule Experience
-**Objectives:** Allow patients to reschedule appointments.
+### Week 3: Elastic Scheduling
+**Objectives:** Implement elastic scheduling for patients to book and adjust appointments dynamically.
 
 **Experience Flow:**  
-- Access existing appointment  
-- Select new slot/time  
-- Confirm reschedule  
-- Receive updated appointment notification
+- Access upcoming appointments  
+- View flexible slots available based on doctor availability  
+- Confirm or adjust appointment dynamically  
 
 **Technical Implementation:**  
-- **Entities:** Appointment, RescheduleHistory  
+- **Entities:** Appointment, Doctor, Patient, ElasticSlot, SlotAllocation  
 - **Relationships:**  
-  - Appointment ↔ RescheduleHistory (1:N)  
-
-**Tasks:**  
-- Backend: APIs for fetching appointments, rescheduling  
-- Frontend: UI for selecting new slots, showing updated appointment details  
+  - Appointment ↔ ElasticSlot (N:1)  
+  - Doctor ↔ ElasticSlot (1:N)  
+- **Tasks:**  
+  - Backend: APIs to fetch elastic slots, create/update appointments  
+  - Database: tables for ElasticSlot, SlotAllocation, dynamic slot availability  
 
 ---
 
-### Week 4: Re-engagement Experience
-**Objectives:** Keep patients engaged with reminders and follow-ups.
+### Week 4: Elastic Scheduling Enhancements
+**Objectives:** Extend elastic scheduling with notifications and analytics.
 
 **Experience Flow:**  
-- Notifications for upcoming appointments  
-- Share health tips, reports, reminders  
-- Encourage follow-up appointments  
-- Personalized recommendations
+- Track dynamic changes in appointments  
+- Notify patients of updated availability  
+- Monitor slot utilization and analytics  
 
 **Technical Implementation:**  
-- **Entities:** Notification, Patient, EngagementHistory  
+- **Entities:** Appointment, Notification, ElasticSlot, Analytics  
 - **Relationships:**  
   - Patient ↔ Notification (1:N)  
-  - Patient ↔ EngagementHistory (1:N)  
-
-**Tasks:**  
-- Backend: scheduled jobs for reminders, notifications system  
-- Frontend: notification center, email/SMS alerts  
+  - Appointment ↔ Analytics (1:1)  
+- **Tasks:**  
+  - Backend: scheduled jobs for notifications, elastic slot updates  
+  - Database: logging changes, analytics for slot usage  
 
 ---
 
@@ -104,7 +99,7 @@
 - Locate app  
 - Register with professional credentials  
 - Verify credentials/approval  
-- Setup profile: specialization, experience, consultation hours, profile pic
+- Setup profile: specialization, experience, consultation hours
 
 **Technical Implementation:**  
 - **Entities:** Doctor, Profile, VerificationToken, Specialization  
@@ -116,7 +111,6 @@
 **Tasks:**  
 - Backend APIs: registration, verification, profile update  
 - Database: doctors, profiles, verification_tokens, specializations  
-- Frontend: registration form, credential upload, profile editor  
 
 ---
 
@@ -124,9 +118,8 @@
 **Objectives:** Allow doctors to view, confirm, and manage appointments.
 
 **Experience Flow:**  
-- View scheduled appointments 
+- View scheduled appointments   
 - Update appointment status (Completed/Cancelled)  
-- Send confirmation/reminder to patients
 
 **Technical Implementation:**  
 - **Entities:** Appointment, Doctor, Patient, Slot, Time  
@@ -137,48 +130,43 @@
   - Slot ↔ Time (1:N)  
 
 **Tasks:**  
-- Backend: APIs for fetching appointments, updating status, sending notifications  
-- Frontend: dashboard with appointments, status updates, patient details  
+- Backend: APIs for fetching appointments, updating status  
 
 ---
 
-### Week 3: Reschedule Experience
-**Objectives:** Allow doctors to reschedule appointments efficiently.
+### Week 3: Elastic Scheduling
+**Objectives:** Implement elastic scheduling for doctors to manage dynamic appointments.
 
 **Experience Flow:**  
-- Access upcoming appointments  
-- Select new slot/time  
-- Confirm reschedule and notify patient  
-- Track reschedule history
+- View flexible slots based on doctor availability  
+- Confirm, adjust, or free slots dynamically  
 
 **Technical Implementation:**  
-- **Entities:** Appointment, RescheduleHistory, Doctor  
+- **Entities:** Doctor, Appointment, ElasticSlot, SlotAllocation  
 - **Relationships:**  
-  - Appointment ↔ RescheduleHistory (1:N)  
-  - Doctor ↔ RescheduleHistory (1:N)  
+  - Doctor ↔ ElasticSlot (1:N)  
+  - Appointment ↔ ElasticSlot (N:1)  
 
 **Tasks:**  
-- Backend: APIs for rescheduling, updating status, notifying patients  
-- Frontend: UI for selecting new slots, confirming reschedule  
+- Backend: APIs for elastic slot management, update appointment allocations  
+- Database: ElasticSlot, SlotAllocation tables  
 
 ---
 
-### Week 4: Patient Engagement Experience
-**Objectives:** Keep doctors engaged with patients and practice management.
+### Week 4: Elastic Scheduling Enhancements
+**Objectives:** Enhance elastic scheduling with notifications and analytics for doctors.
 
 **Experience Flow:**  
-- Review patient feedback  
-- Track patient reports and follow-ups  
-- Send reminders for appointments/lab results  
-- Access dashboard/analytics for performance
+- Monitor dynamic slot changes  
+- Receive notifications on appointment updates  
+- Analyze slot utilization and patient engagement  
 
 **Technical Implementation:**  
-- **Entities:** Doctor, Patient, Feedback, Notification, EngagementHistory  
+- **Entities:** Doctor, Appointment, Notification, Analytics, ElasticSlot  
 - **Relationships:**  
-  - Doctor ↔ Patient (1:N)  
-  - Doctor ↔ Feedback (1:N)  
   - Doctor ↔ Notification (1:N)  
+  - Appointment ↔ Analytics (1:1)  
 
 **Tasks:**  
-- Backend: APIs for feedback, notifications, analytics  
-- Frontend: dashboard showing feedback, patient history, notifications, analytics  
+- Backend: APIs for notifications, analytics, dynamic slot updates  
+- Database: logging changes and tracking utilization  
