@@ -1,186 +1,190 @@
-# Weekly Development Plans
+# Weekly Plan – Patient & Doctor Experience
 
-## Backend Developer Track
-
-### Week 1: Project Initialization and Authentication
-**Objective**: Set the foundation for the project and implement authentication system
-
-#### Tasks
-1. **Project Setup**
-   - Initialize NestJS project
-   - Configure TypeScript and linting
-   - Set up PostgreSQL database
-
-2. **API Testing Setup**
-   - Create Hoppscotch workspace
-   - Configure environment variables
-
-3. **Database Design**
-   - Create ER diagram
-   - Define data models
-
-4. **Authentication Endpoints**
-   ```
-   POST /api/v1/auth/signup
-   POST /api/v1/auth/signin
-   POST /api/v1/auth/signout
-   ```
-
-### Week 2: Doctor Listing API Development
-**Objective**: Develop APIs for listing available doctors
-
-#### Tasks
-1. **Doctor Endpoints**
-   ```
-   GET /api/v1/doctors
-   GET /api/v1/doctors/{id}
-   GET /api/v1/doctors/search?name={name}
-   ```
-
-2. **Security**
-   - Implement authentication middleware
-   - Add role-based access control
-
-### Weeks 3-4: Appointment and Patient API Development
-**Objective**: Create APIs for managing patients and appointments
-
-#### Patient Endpoints
-```
-POST   /api/v1/patients
-PUT    /api/v1/patients/{id}
-GET    /api/v1/patients/{id}
-DELETE /api/v1/patients/{id}
-```
-
-#### Appointment Endpoints
-```
-POST   /api/v1/appointments
-PUT    /api/v1/appointments/{id}
-PATCH  /api/v1/appointments/{id}/cancel
-GET    /api/v1/appointments/{id}
-```
-
-#### Additional Requirements
-- Data validation and error handling
-- Pagination for list endpoints
-- Unit tests with Jest
-- API documentation (Swagger)
+## Table of Contents
+1. [Patient Experience](#patient-experience)  
+2. [Doctor Experience](#doctor-experience)  
 
 ---
 
-## Full Stack Developer Track
+## Patient Experience
 
-### Week 1: Foundation Setup
-**Focus**: Project initialization and core infrastructure
-
-#### Frontend (Next.js)
-- Project setup with TypeScript
-- Configure Tailwind CSS
-- Set up Redux Toolkit
-- Create base layouts
-
-#### Backend (Nest.js)
-- Initialize project structure
-- Configure PostgreSQL with TypeORM
-- Set up JWT authentication
-- Create user model
-
-### Week 2: Authentication System
-**Focus**: Complete user authentication flow
-
-#### Features
-- User registration page
-- Login/logout functionality
-- Protected routes
-- Session management
-- Password reset flow
-
-### Week 3: Core Features
-**Focus**: Main application functionality
-
-#### Frontend
-- Dashboard layout
-- Data tables with pagination
-- Forms with validation
-- Real-time updates
-
-#### Backend
-- CRUD operations
-- Advanced querying
-- File upload handling
-- WebSocket integration
-
-### Week 4: Advanced Features
-**Focus**: Performance and user experience
-
-#### Implementations
-- Caching strategies
-- Lazy loading
-- Error boundaries
-- Progressive enhancement
-- SEO optimization
-
-### Week 5: Testing and Quality
-**Focus**: Comprehensive testing and code quality
-
-#### Testing Coverage
-- Unit tests (Jest)
-- Integration tests
-- E2E tests (Cypress)
-- Performance testing
-- Security audits
-
-### Week 6: Deployment and Optimization
-**Focus**: Production readiness
-
-#### Deployment Tasks
-- CI/CD pipeline setup
-- Environment configuration
-- Performance monitoring
-- Error tracking (Sentry)
-- Documentation completion
-
+### Week 1: Registration & Onboarding
+**Objectives:** Help patients locate the app, register, verify, and complete onboarding.
+ 
+**Experience Flow:**  
+- Locate the app.  
+- Register via email/phone/social login.  
+- Verify identity via OTP/email.  
+- Complete onboarding walkthrough.
+ 
+**Technical Implementation:**  
+- **Entities:** Patient, Profile, VerificationToken, OnboardingStatus  
+- **Relationships:**  
+  - Patient ↔ Profile (1:1)  
+  - Patient ↔ VerificationToken (1:N)  
+  - Patient ↔ OnboardingStatus (1:1)  
+ 
+**Tasks:**  
+- Backend APIs: registration, verification, onboarding status  
+- Database tables: patients, profiles, verification_tokens  
+ 
 ---
-
-## AI Internship Track
-
-### Week 1: AI Foundations
-**Objective**: Understanding AI in business context
-
-#### Topics
-- Introduction to Machine Learning
-- Business use cases for AI
-- Data preprocessing basics
-- Python for AI development
-
-### Week 2: Data Processing
-**Objective**: Working with real-world data
-
-#### Skills
-- Data cleaning techniques
-- Feature engineering
-- Exploratory data analysis
-- Visualization with matplotlib/seaborn
-
-### Week 3: Machine Learning Models
-**Objective**: Building and training models
-
-#### Implementations
-- Classification algorithms
-- Regression models
-- Model evaluation metrics
-- Cross-validation techniques
-
-### Week 4: AI Integration
-**Objective**: Deploying AI solutions
-
-#### Projects
-- REST API for ML models
-- Real-time predictions
-- Model versioning
-- Performance optimization
-
+ 
+### Week 2: Appointment Making
+**Objectives:** Allow patients to book appointments easily.
+ 
+**Experience Flow:**  
+- Locate doctor by specialty/ratings/availability  
+- Select available slot and preferred time  
+- Confirm appointment →
+System triggers notification to patient:
+ 
+“Your appointment with Dr. XYZ on DD/MM/YYYY at HH:MM is confirmed.”
+ 
+- View appointment summary and reminders
+- Cancel appointment if needed
+ 
+**Technical Implementation:**  
+- **Entities:** Appointment, Doctor, Patient, Slot, Time  
+- **Relationships:**  
+  - Appointment ↔ Patient (N:1)  
+  - Appointment ↔ Doctor (N:1)  
+  - Doctor ↔ Slot (1:N)  
+  - Slot ↔ Time (1:N)  
+ 
+**Tasks:**  
+Backend:
+ 
+API for doctor listing
+ 
+One API for appointment booking
+ 
+API for patient to cancel appointment
+ 
+API for fetching patient’s appointment
+ 
+ 
+## Week 3: Reschedule Experience
+**Objectives:** Allow patients to reschedule appointments.
+ 
+**Experience Flow:**  
+- Access existing appointment  
+- Select new slot/time  
+- Confirm reschedule  
+- Receive updated appointment notification
+ 
+**Technical Implementation:**  
+- **Entities:** Appointment, RescheduleHistory  
+- **Relationships:**  
+  - Appointment ↔ RescheduleHistory (1:N)  
+ 
+**Tasks:**  
+- Backend: APIs for fetching appointments, rescheduling  
+- Frontend: UI for selecting new slots, showing updated appointment details  
+ 
+ 
+## Week 4: Re-engagement Experience
+**Objectives:** Keep patients engaged with reminders and follow-ups.
+ 
+**Experience Flow:**  
+- Notifications for upcoming appointments  
+- Share health tips, reports, reminders  
+- Encourage follow-up appointments  
+- Personalized recommendations
+ 
+**Technical Implementation:**  
+- **Entities:** Notification, Patient, EngagementHistory  
+- **Relationships:**  
+  - Patient ↔ Notification (1:N)  
+  - Patient ↔ EngagementHistory (1:N)  
+ 
+**Tasks:**  
+- Backend: scheduled jobs for reminders, notifications system  
+- Frontend: notification center, email/SMS alerts  
+ 
 ---
+ 
+## Doctor Experience
+ 
+### Week 1: Onboarding & Profile Setup
+**Objectives:** Help doctors register, verify credentials, and setup profile.
+ 
+**Experience Flow:**  
+- Locate app  
+- Register with professional credentials  
+- Verify credentials/approval  
+- Setup profile: specialization, experience, consultation hours
+ 
+**Technical Implementation:**  
+- **Entities:** Doctor, Profile, VerificationToken, Specialization  
+- **Relationships:**  
+  - Doctor ↔ Profile (1:1)  
+  - Doctor ↔ VerificationToken (1:N)  
+  - Doctor ↔ Specialization (1:N)  
+ 
+**Tasks:**  
+- Backend APIs: registration, verification, profile update , to set availability 
+- Database: doctors, profiles, verification_tokens, specializations  
+ 
+---
+ 
+### Week 2: Appointment Management
+**Objectives:** Allow doctors to view, confirm, and manage appointments.
+ 
+**Experience Flow:**  
+- View scheduled appointments   
+- Doctor can cancel appointment and patients should get notification for the same
+ 
+**Technical Implementation:**  
+- **Entities:** Appointment, Doctor, Patient, Slot, Time  
+- **Relationships:**  
+  - Doctor ↔ Appointment (1:N)  
+  - Appointment ↔ Patient (N:1)  
+  - Doctor ↔ Slot (1:N)  
+  - Slot ↔ Time (1:N)  
+ 
+**Tasks:**  
+- Backend: APIs for fetching appointments, cancel appointments
+ 
+---
+ 
+### Week 3: Elastic Scheduling
+**Objectives:** Implement elastic scheduling for doctors to manage dynamic appointments.
+ 
+**Experience Flow:**  
+- View flexible slots based on doctor availability   
+- allow doctors to expand the consulting hours and capacity (max number of appointments)
+ 
+**Technical Implementation:**  
+- **Entities:** Doctor, Appointment, ElasticSlot, SlotAllocation  
+- **Relationships:**  
+  - Doctor ↔ ElasticSlot (1:N)  
+  - Appointment ↔ ElasticSlot (N:1)  
+ 
+**Tasks:**  
+- Backend: APIs for elastic slot management, update appointment allocations  
+- Database: ElasticSlot, SlotAllocation tables  
+ 
+---
+ 
+### Week 4: Re-engagement Experience
+**Objectives:**  Keep doctors informed about important appointment changes and help them analyze slot utilization for better decision-making.
+**Experience Flow:**  
+- Monitor dynamic slot changes  
+- Doctor will receive notifications when:
+    - A patient cancels an appointment → So doctor knows the slot is now free.  
+    - An appointment is rescheduled → So doctor is aware of new timing.  - Analyze slot utilization and patient engagement 
+- Analyze slot utilization and patient engagement   
+ 
+**Technical Implementation:**  
+- **Entities:** Doctor, Appointment, Notification, Analytics, ElasticSlot  
+- **Relationships:**  
+  - Doctor ↔ Notification (1:N)  
+  - Appointment ↔ Analytics (1:1)  
+ 
+**Tasks:**  
+- Backend: APIs for notifications, analytics, dynamic slot updates  
+- Database: logging changes and tracking utilization  
 
 ## Daily Schedule Template
 
