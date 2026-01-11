@@ -19,7 +19,7 @@ We follow **Team Topologies** principles for organizing our engineering work. Un
 │                                                                  │
 │  STREAM-ALIGNED TEAMS (Delivery)                                │
 │  └── Own end-to-end delivery of business capabilities           │
-│  └── Example: SMW Modernization Team, Schedula Team             │
+│  └── Example: Product Teams, Client Delivery Teams              │
 │  └── They build features, fix bugs, ship to production          │
 │                                                                  │
 │  PLATFORM TEAMS                                                  │
