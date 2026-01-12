@@ -293,11 +293,11 @@ Where consultants are too expensive ($200/hr × 1000 hours = $200K).
 
 ## Related
 
-- [AI Internship Overview](./Index.md)
-- [Existing Tools Research](./Existing-Tools-Research.md)
-- [Validation Projects](./Validation-Projects.md)
-- [Goals & Expectations](./Goals-and-Expectations.md)
-- [AI Coding Tools Comparison](./AI-Coding-Tools-Comparison.md)
+- [AI Internship Overview](./00-Index.md)
+- [Existing Tools Research](./03-Existing-Tools-Research.md)
+- [Validation Projects](./08-Validation-Projects.md)
+- [Goals & Expectations](./02-Goals-and-Expectations.md)
+- [AI Coding Tools Comparison](./05-AI-Coding-Tools-Comparison.md)
 
 ---
 
