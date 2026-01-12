@@ -295,10 +295,12 @@ By the end of this internship, you will:
 
 1. Read this overview completely
 2. **Understand your role**: [[Organizational-Context|How You Fit Into PearlThoughts]]
-3. Review the [[Validation-Projects|Validation Projects]] in detail
-4. Choose your track (A, B, C, or D)
-5. Set up your development environment
-6. Join the #ai-internship Slack channel
+3. **Read the goals**: [[Goals-and-Expectations|4-Week Internship Goals]]
+4. **Research existing tools**: [[Existing-Tools-Research|AI Modernization Tools Landscape]]
+5. Review the [[Validation-Projects|Validation Projects]] in detail
+6. Choose your track (A, B, C, or D)
+7. Set up your development environment
+8. Join the #ai-internship Slack channel
 
 ---
 
