@@ -26,6 +26,7 @@ Download **[Obsidian](https://obsidian.md/)** for the best experience:
 ### 01 - Getting Started
 | # | Document | Description |
 |---|----------|-------------|
+| 1.0 | [Before You Begin](./01-Getting-Started/00-Before-You-Begin.md) | **READ FIRST** - Expectations, mindset |
 | 1.1 | [Organizational Context](./01-Getting-Started/01-Organizational-Context.md) | Your role in PearlThoughts |
 | 1.2 | [Goals & Expectations](./01-Getting-Started/02-Goals-and-Expectations.md) | 4-week plan, deliverables |
 | 1.3 | [What You Build](./01-Getting-Started/03-What-You-Build.md) | Form factors, AI setup, workflow |
