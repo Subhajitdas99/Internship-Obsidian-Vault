@@ -53,11 +53,17 @@ For the best experience navigating this documentation, we recommend using **[Obs
 | 8 | [Quality Metrics](./07-Quality-Metrics.md) | How to measure tool quality (RAGAs, MLflow, test cases) | Week 2-3 |
 | 9 | [Validation Projects](./08-Validation-Projects.md) | Target systems: Bahmni, ERPNext, Odoo | Week 2-4 |
 
+### Practical Guide
+
+| # | Document | Description | Read When |
+|---|----------|-------------|-----------|
+| 10 | [What You Build](./10-What-You-Build.md) | Form factors, AI setup, daily workflow, testing | Before Week 2 |
+
 ### Progress Tracking
 
 | # | Document | Description | Read When |
 |---|----------|-------------|-----------|
-| 10 | [OKR](./09-OKR.md) | Objectives & Key Results by track | Weekly |
+| 11 | [OKR](./09-OKR.md) | Objectives & Key Results by track | Weekly |
 
 ---
 
@@ -77,6 +83,7 @@ For the best experience navigating this documentation, we recommend using **[Obs
 
 ### Building Your Solution
 
+- [What You Build](./10-What-You-Build.md) - Form factors, AI infrastructure, daily workflow
 - [Technical Architecture](./06-Technical-Architecture.md) - 4-mode extraction approach
 - [Quality Metrics](./07-Quality-Metrics.md) - Measuring success
 - [Goals & Expectations](./02-Goals-and-Expectations.md#week-2-build-phase) - Week 2 tasks
@@ -295,9 +302,11 @@ By the end of this internship, you will:
 | 7 | Learn the technical architecture | [Technical Architecture](./06-Technical-Architecture.md) | ☐ |
 | 8 | Understand quality measurement | [Quality Metrics](./07-Quality-Metrics.md) | ☐ |
 | 9 | Review validation projects | [Validation Projects](./08-Validation-Projects.md) | ☐ |
-| 10 | Choose your track (A, B, C, or D) | [OKR](./09-OKR.md) | ☐ |
-| 11 | Set up development environment | See mentor | ☐ |
-| 12 | Join #ai-internship Slack channel | | ☐ |
+| 10 | **Read practical build guide** | [What You Build](./10-What-You-Build.md) | ☐ |
+| 11 | Choose your track (A, B, C, or D) | [OKR](./09-OKR.md) | ☐ |
+| 12 | Set up AI infrastructure (Ollama + Groq) | [What You Build](./10-What-You-Build.md#setting-up-the-recommended-stack) | ☐ |
+| 13 | Set up development environment | See mentor | ☐ |
+| 14 | Join #ai-internship Slack channel | | ☐ |
 
 ---
 
@@ -314,7 +323,7 @@ By the end of this internship, you will:
 
 ```
                     ┌─────────────────┐
-                    │   Index.md      │ ◄── You are here
+                    │   00-Index.md   │ ◄── You are here
                     │   (Overview)    │
                     └────────┬────────┘
                              │
@@ -322,9 +331,8 @@ By the end of this internship, you will:
          │                   │                   │
          ▼                   ▼                   ▼
 ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
-│ Organizational  │ │ Goals &         │ │ Validation      │
-│ Context         │ │ Expectations    │ │ Projects        │
-│ (Your Role)     │ │ (4-Week Plan)   │ │ (Target Systems)│
+│ 01-Org Context  │ │ 02-Goals &      │ │ 08-Validation   │
+│ (Your Role)     │ │ Expectations    │ │ Projects        │
 └────────┬────────┘ └────────┬────────┘ └────────┬────────┘
          │                   │                   │
          │    ┌──────────────┴──────────────┐    │
@@ -332,19 +340,26 @@ By the end of this internship, you will:
          ▼    ▼                             ▼    ▼
 ┌─────────────────┐                 ┌─────────────────┐
 │ Research Docs   │                 │ Technical Docs  │
-│ ├── Existing    │                 │ ├── Technical   │
+│ ├── 03-Existing │                 │ ├── 06-Technical│
 │ │   Tools       │◄───────────────►│ │   Architecture│
-│ ├── Market      │                 │ └── Quality     │
+│ ├── 04-Market   │                 │ └── 07-Quality  │
 │ │   Analysis    │                 │     Metrics     │
-│ └── AI Tools    │                 │                 │
+│ └── 05-AI Tools │                 │                 │
 │     Comparison  │                 │                 │
 └─────────────────┘                 └─────────────────┘
          │                                   │
          └───────────────┬───────────────────┘
                          │
                          ▼
+              ┌─────────────────────┐
+              │ 10-What-You-Build   │ ◄── Practical Guide
+              │ (Form Factor, AI,   │
+              │  Testing, Workflow) │
+              └──────────┬──────────┘
+                         │
+                         ▼
                  ┌─────────────────┐
-                 │     OKR.md      │
+                 │    09-OKR.md    │
                  │ (Track Progress)│
                  └─────────────────┘
 ```
