@@ -73,7 +73,7 @@ In your README or a separate `REFLECTION.md`:
 
 **Recommended for beginners**: Option A (ERPNext) - richest documentation, clearest patterns.
 
-See [[12-Project-Deep-Dives/Choosing-Your-Project|Choosing Your Project]] for detailed comparison.
+See [Choosing Your Project](../04-Target-Projects/01-Choosing-Your-Project.md) for detailed comparison.
 
 ---
 
@@ -149,9 +149,9 @@ Use **whatever language you're comfortable with**:
 
 ### Required Reading (Do This First)
 
-1. [[11-Understanding-Legacy-Systems/What-Is-Legacy|What Is Legacy Code?]]
-2. [[11-Understanding-Legacy-Systems/Terminology-Glossary|Terminology Glossary]]
-3. [[12-Project-Deep-Dives/Choosing-Your-Project|Choosing Your Project]]
+1. [What Is Legacy Code?](../02-Understanding-Legacy/01-What-Is-Legacy.md)
+2. [Terminology Glossary](../02-Understanding-Legacy/04-Terminology-Glossary.md)
+3. [Choosing Your Project](../04-Target-Projects/01-Choosing-Your-Project.md)
 
 ### Target Codebases
 
@@ -279,8 +279,8 @@ Yes, but:
 
 ## Next Steps
 
-1. Read [[11-Understanding-Legacy-Systems/What-Is-Legacy|What Is Legacy Code?]]
-2. Read [[12-Project-Deep-Dives/Choosing-Your-Project|Choosing Your Project]]
+1. Read [What Is Legacy Code?](../02-Understanding-Legacy/01-What-Is-Legacy.md)
+2. Read [Choosing Your Project](../04-Target-Projects/01-Choosing-Your-Project.md)
 3. Clone your chosen codebase
 4. Start building!
 

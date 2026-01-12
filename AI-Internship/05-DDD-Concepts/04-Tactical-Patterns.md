@@ -630,7 +630,7 @@ class LegacyOrderAdapter {
 
 ## Related
 
-- [[Strategic-Design|Strategic Design]]
-- [[Bounded-Contexts-Explained|Bounded Contexts]]
-- [[Applied-To-Target-Projects|Applied to Target Projects]]
-- [[Why-DDD-Matters|Why DDD Matters]]
+- [Strategic Design](./03-Strategic-Design.md)
+- [Bounded Contexts](./02-Bounded-Contexts.md)
+- [Applied to Target Projects](./05-Applied-To-Projects.md)
+- [Why DDD Matters](./01-Why-DDD-Matters.md)

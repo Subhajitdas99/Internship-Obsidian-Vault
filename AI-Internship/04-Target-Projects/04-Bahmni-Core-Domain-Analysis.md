@@ -407,7 +407,7 @@ bahmni-core/bahmnicore-api/src/main/java/org/bahmni/module/bahmnicore/
 
 ## Related
 
-- [[Choosing-Your-Project|Choosing Your Project]]
-- [[ERPNext-Domain-Analysis|ERPNext Analysis]]
-- [[OpenElis-Domain-Analysis|OpenElis Analysis]]
-- [[../15-Week-1-Exercises/Pre-Internship-Requirements|Week 1 Requirements]]
+- [Choosing Your Project](./01-Choosing-Your-Project.md)
+- [ERPNext Analysis](./02-ERPNext-Domain-Analysis.md)
+- [OpenElis Analysis](./03-OpenElis-Domain-Analysis.md)
+- [Week 1 Requirements](../08-Exercises/01-Pre-Internship-Requirements.md)

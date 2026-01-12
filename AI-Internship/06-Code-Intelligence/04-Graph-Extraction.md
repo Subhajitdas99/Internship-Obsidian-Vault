@@ -555,7 +555,7 @@ def build_code_graph(root_dir: str, output_path: str):
 
 ## Related
 
-- [[Indexing-Strategies|Indexing Strategies]]
-- [[AST-vs-Text-Chunking|AST vs Text Chunking]]
-- [[CodeCompass-Learnings|CodeCompass Learnings]]
-- [[../13-DDD-For-Modernization/Bounded-Contexts-Explained|Bounded Contexts]]
+- [Indexing Strategies](./03-Indexing-Strategies.md)
+- [AST vs Text Chunking](./02-AST-vs-Text-Chunking.md)
+- [CodeCompass Learnings](./06-CodeCompass-Learnings.md)
+- [Bounded Contexts](../05-DDD-Concepts/02-Bounded-Contexts.md)

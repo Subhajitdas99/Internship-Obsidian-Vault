@@ -279,7 +279,7 @@ Code: Completely different from docs
 
 ## Related
 
-- [[What-Is-Legacy|What Is Legacy Code?]]
-- [[Why-Modernize|Why Modernize?]]
-- [[Terminology-Glossary|Terminology Glossary]]
-- [[../14-Building-Code-Intelligence/What-Is-Code-Intelligence|What Is Code Intelligence?]]
+- [What Is Legacy Code?](./01-What-Is-Legacy.md)
+- [Why Modernize?](./02-Why-Modernize.md)
+- [Terminology Glossary](./04-Terminology-Glossary.md)
+- [What Is Code Intelligence?](../06-Code-Intelligence/01-What-Is-Code-Intelligence.md)

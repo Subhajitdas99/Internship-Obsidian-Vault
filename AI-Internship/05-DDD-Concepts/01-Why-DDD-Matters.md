@@ -294,8 +294,8 @@ You don't need to master DDD. You need to:
 
 ## Related
 
-- [[Bounded-Contexts-Explained|Bounded Contexts Deep Dive]]
-- [[Strategic-Design|Strategic Design Patterns]]
-- [[Tactical-Patterns|Tactical DDD Patterns]]
-- [[Applied-To-Target-Projects|DDD Applied to ERPNext/Bahmni]]
-- [[../11-Understanding-Legacy-Systems/What-Is-Legacy|What Is Legacy Code?]]
+- [Bounded Contexts Deep Dive](./02-Bounded-Contexts.md)
+- [Strategic Design Patterns](./03-Strategic-Design.md)
+- [Tactical DDD Patterns](./04-Tactical-Patterns.md)
+- [DDD Applied to ERPNext/Bahmni](./05-Applied-To-Projects.md)
+- [What Is Legacy Code?](../02-Understanding-Legacy/01-What-Is-Legacy.md)

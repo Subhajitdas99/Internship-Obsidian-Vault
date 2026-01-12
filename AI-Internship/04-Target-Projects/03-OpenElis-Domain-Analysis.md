@@ -426,7 +426,7 @@ cat openelis/src/org/openelis/domain/Sample.java
 
 ## Related
 
-- [[Choosing-Your-Project|Choosing Your Project]]
-- [[ERPNext-Domain-Analysis|ERPNext Analysis]]
-- [[Bahmni-Core-Domain-Analysis|Bahmni Analysis]]
-- [[../15-Week-1-Exercises/Pre-Internship-Requirements|Week 1 Requirements]]
+- [Choosing Your Project](./01-Choosing-Your-Project.md)
+- [ERPNext Analysis](./02-ERPNext-Domain-Analysis.md)
+- [Bahmni Analysis](./04-Bahmni-Core-Domain-Analysis.md)
+- [Week 1 Requirements](../08-Exercises/01-Pre-Internship-Requirements.md)

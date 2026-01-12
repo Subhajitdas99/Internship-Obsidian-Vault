@@ -290,8 +290,8 @@ Building a working tool is secondary to learning.
 
 ## Related
 
-- [[What-Is-Code-Intelligence|What Is Code Intelligence?]]
-- [[AST-vs-Text-Chunking|AST vs Text Chunking]]
-- [[Indexing-Strategies|Indexing Strategies]]
-- [[Commercial-Tools-Comparison|Commercial Tools]]
-- [[../15-Week-1-Exercises/Pre-Internship-Requirements|Week 1 Requirements]]
+- [What Is Code Intelligence?](./01-What-Is-Code-Intelligence.md)
+- [AST vs Text Chunking](./02-AST-vs-Text-Chunking.md)
+- [Indexing Strategies](./03-Indexing-Strategies.md)
+- [Commercial Tools](./05-Commercial-Tools.md)
+- [Week 1 Requirements](../08-Exercises/01-Pre-Internship-Requirements.md)

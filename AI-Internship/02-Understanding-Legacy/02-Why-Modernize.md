@@ -259,7 +259,7 @@ Extract: All validation rules from SalesInvoice
 
 ## Related
 
-- [[What-Is-Legacy|What Is Legacy Code?]]
-- [[Real-World-Examples|Real-World Legacy Examples]]
-- [[../13-DDD-For-Modernization/Why-DDD-Matters|Why DDD Matters]]
-- [[../14-Building-Code-Intelligence/What-Is-Code-Intelligence|What Is Code Intelligence?]]
+- [What Is Legacy Code?](./01-What-Is-Legacy.md)
+- [Real-World Legacy Examples](./03-Real-World-Examples.md)
+- [Why DDD Matters](../05-DDD-Concepts/01-Why-DDD-Matters.md)
+- [What Is Code Intelligence?](../06-Code-Intelligence/01-What-Is-Code-Intelligence.md)

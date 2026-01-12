@@ -441,7 +441,7 @@ When analyzing your target codebase:
 
 ## Related
 
-- [[Bounded-Contexts-Explained|Bounded Contexts Deep Dive]]
-- [[Tactical-Patterns|Tactical Patterns]]
-- [[Applied-To-Target-Projects|Applied to ERPNext/Bahmni/OpenElis]]
-- [[Why-DDD-Matters|Why DDD Matters]]
+- [Bounded Contexts Deep Dive](./02-Bounded-Contexts.md)
+- [Tactical Patterns](./04-Tactical-Patterns.md)
+- [Applied to ERPNext/Bahmni/OpenElis](./05-Applied-To-Projects.md)
+- [Why DDD Matters](./01-Why-DDD-Matters.md)

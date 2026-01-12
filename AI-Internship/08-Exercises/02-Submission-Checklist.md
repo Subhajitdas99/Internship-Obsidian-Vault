@@ -164,5 +164,5 @@ Post in #ai-internship channel. We're here to help.
 
 ## Related
 
-- [[Pre-Internship-Requirements|Pre-Internship Requirements]]
-- [[../12-Project-Deep-Dives/Choosing-Your-Project|Choosing Your Project]]
+- [Pre-Internship Requirements](./01-Pre-Internship-Requirements.md)
+- [Choosing Your Project](../04-Target-Projects/01-Choosing-Your-Project.md)

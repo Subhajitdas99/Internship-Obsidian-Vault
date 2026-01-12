@@ -334,7 +334,7 @@ Query: "Where is Customer defined?"
 
 ## Related
 
-- [[Why-DDD-Matters|Why DDD Matters]]
-- [[Strategic-Design|Strategic Design Patterns]]
-- [[Applied-To-Target-Projects|DDD Applied to ERPNext/OpenElis]]
-- [[../12-Project-Deep-Dives/ERPNext-Domain-Analysis|ERPNext Domain Analysis]]
+- [Why DDD Matters](./01-Why-DDD-Matters.md)
+- [Strategic Design Patterns](./03-Strategic-Design.md)
+- [DDD Applied to ERPNext/OpenElis](./05-Applied-To-Projects.md)
+- [ERPNext Domain Analysis](../04-Target-Projects/02-ERPNext-Domain-Analysis.md)

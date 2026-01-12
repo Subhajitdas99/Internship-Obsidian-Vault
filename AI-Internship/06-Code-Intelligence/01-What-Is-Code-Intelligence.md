@@ -320,8 +320,8 @@ A **minimal code intelligence tool** that:
 
 ## Related
 
-- [[Indexing-Strategies|Indexing Strategies]]
-- [[AST-vs-Text-Chunking|AST vs Text Chunking]]
-- [[Graph-Extraction|Graph Extraction]]
-- [[Commercial-Tools-Comparison|Commercial Tools Comparison]]
-- [[CodeCompass-Learnings|What We Learned Building CodeCompass]]
+- [Indexing Strategies](./03-Indexing-Strategies.md)
+- [AST vs Text Chunking](./02-AST-vs-Text-Chunking.md)
+- [Graph Extraction](./04-Graph-Extraction.md)
+- [Commercial Tools Comparison](./05-Commercial-Tools.md)
+- [What We Learned Building CodeCompass](./06-CodeCompass-Learnings.md)

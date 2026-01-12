@@ -379,6 +379,6 @@ Splitting large documents/code into smaller pieces for processing and embedding.
 
 ## Related
 
-- [[What-Is-Legacy|What Is Legacy Code?]]
-- [[Why-Modernize|Why Modernize?]]
-- [[../13-DDD-For-Modernization/Why-DDD-Matters|Why DDD Matters]]
+- [What Is Legacy Code?](./01-What-Is-Legacy.md)
+- [Why Modernize?](./02-Why-Modernize.md)
+- [Why DDD Matters](../05-DDD-Concepts/01-Why-DDD-Matters.md)

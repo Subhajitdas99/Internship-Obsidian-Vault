@@ -317,7 +317,7 @@ Start simple, iterate.
 
 ## Related
 
-- [[What-Is-Code-Intelligence|What Is Code Intelligence?]]
-- [[CodeCompass-Learnings|CodeCompass Learnings]]
-- [[AST-vs-Text-Chunking|AST vs Text Chunking]]
-- [[../15-Week-1-Exercises/Pre-Internship-Requirements|Week 1 Requirements]]
+- [What Is Code Intelligence?](./01-What-Is-Code-Intelligence.md)
+- [CodeCompass Learnings](./06-CodeCompass-Learnings.md)
+- [AST vs Text Chunking](./02-AST-vs-Text-Chunking.md)
+- [Week 1 Requirements](../08-Exercises/01-Pre-Internship-Requirements.md)

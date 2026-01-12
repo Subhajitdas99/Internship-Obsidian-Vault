@@ -702,8 +702,8 @@ erDiagram
 
 ## Related
 
-- [[Strategic-Design|Strategic Design]]
-- [[Tactical-Patterns|Tactical Patterns]]
-- [[../12-Project-Deep-Dives/ERPNext-Domain-Analysis|ERPNext Analysis]]
-- [[../12-Project-Deep-Dives/OpenElis-Domain-Analysis|OpenElis Analysis]]
-- [[../12-Project-Deep-Dives/Bahmni-Core-Domain-Analysis|Bahmni Analysis]]
+- [Strategic Design](./03-Strategic-Design.md)
+- [Tactical Patterns](./04-Tactical-Patterns.md)
+- [ERPNext Analysis](../04-Target-Projects/02-ERPNext-Domain-Analysis.md)
+- [OpenElis Analysis](../04-Target-Projects/03-OpenElis-Domain-Analysis.md)
+- [Bahmni Analysis](../04-Target-Projects/04-Bahmni-Core-Domain-Analysis.md)

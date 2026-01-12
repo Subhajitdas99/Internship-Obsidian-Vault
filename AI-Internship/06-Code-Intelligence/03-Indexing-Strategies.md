@@ -430,7 +430,7 @@ def needs_reindex(path: Path, cached_hashes: dict) -> bool:
 
 ## Related
 
-- [[What-Is-Code-Intelligence|What Is Code Intelligence?]]
-- [[AST-vs-Text-Chunking|AST vs Text Chunking]]
-- [[Graph-Extraction|Graph Extraction]]
-- [[CodeCompass-Learnings|CodeCompass Learnings]]
+- [What Is Code Intelligence?](./01-What-Is-Code-Intelligence.md)
+- [AST vs Text Chunking](./02-AST-vs-Text-Chunking.md)
+- [Graph Extraction](./04-Graph-Extraction.md)
+- [CodeCompass Learnings](./06-CodeCompass-Learnings.md)
