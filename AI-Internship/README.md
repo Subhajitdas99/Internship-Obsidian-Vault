@@ -44,6 +44,7 @@
 | 1.1 | [Organizational Context](./01-Getting-Started/01-Organizational-Context.md) | Your role in PearlThoughts |
 | 1.2 | [Goals & Expectations](./01-Getting-Started/02-Goals-and-Expectations.md) | 4-week plan, deliverables |
 | 1.3 | [What You Build](./01-Getting-Started/03-What-You-Build.md) | Form factors, AI setup, workflow |
+| 1.4 | [Community & Collaboration](./01-Getting-Started/04-Community-and-Collaboration.md) | Channels, buddies, teams |
 
 ### 🏛️ 02 - Understanding Legacy Systems
 | # | Document | Description |
