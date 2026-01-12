@@ -71,4 +71,4 @@ out/
 backup/
 
 # Obsidian config (optional - remove if you want to track settings)
-# .obsidian/
+# .obsidian/.obsidian/workspace.json
