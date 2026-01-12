@@ -303,6 +303,132 @@ React or reply to connect!
 
 ---
 
+## 🌟 Daily Internship Call (10 AM IST)
+
+Every day at 10 AM, we hold a **live webinar-style call** open to all interns.
+
+### What Happens
+
+| Segment | Duration | Description |
+|---------|----------|-------------|
+| **Announcements** | 5 min | Updates, deadlines, tips |
+| **Featured Intern** | 10-15 min | One intern shares their work and thinking |
+| **Q&A** | 10 min | Questions from attendees |
+| **Open Discussion** | 5-10 min | Community questions, stuck points |
+
+### Getting Featured
+
+We notice when you:
+- Share discoveries in public channels
+- Post Loom videos explaining your approach
+- Help others get unstuck
+- Ask thoughtful questions
+- Document what you learned
+
+**If your work stands out, we'll invite you to present at the daily call.**
+
+This isn't about being "the best" — it's about being **generous with your knowledge**.
+
+### What We Ask Featured Interns
+
+When you present, share:
+- **What you built** — Demo your tool
+- **Why you made those choices** — Your reasoning matters more than the code
+- **What didn't work** — Failures teach everyone
+- **What you'd do differently** — Reflection shows growth
+
+---
+
+## 💡 The Power of Sharing
+
+### Why Share Publicly?
+
+Some of the smartest interns figure things out on their own — even with minimal guidance. **The best ones share what they learned.**
+
+```
+🔄 THE VIRTUOUS CYCLE
+
+   You struggle with something
+            ↓
+   You figure it out
+            ↓
+   You share it publicly (channel, Loom, doc)
+            ↓
+   Others learn from you
+            ↓
+   You become known as helpful
+            ↓
+   People ask you questions
+            ↓
+   Teaching deepens YOUR understanding
+            ↓
+   You get invited to present at daily call
+            ↓
+   Your confidence and reputation grow
+```
+
+### The Psychology of Helping
+
+Here's a secret: **helping others feels deeply satisfying.**
+
+Research shows that:
+- Teaching something reinforces your own understanding
+- Being helpful triggers the same brain rewards as receiving help
+- People who help others report higher job satisfaction
+- Your "helper reputation" compounds — people remember who helped them
+
+**You don't need permission to help.** See someone stuck? Offer what you know.
+
+### Ways to Share
+
+| Method | When to Use | Example |
+|--------|-------------|---------|
+| **Channel message** | Quick tips, discoveries | "Found where tax calculations happen: `accounts/doctype/tax_rule/`" |
+| **Loom video** | Walkthroughs, explanations | "5-min video: How I debugged the AST parsing issue" |
+| **Code snippet** | Reusable solutions | "Here's the regex that finally worked for decorated functions" |
+| **Document/Guide** | Comprehensive knowledge | "My notes on understanding Frappe DocTypes" |
+| **Answer questions** | When someone's stuck | Reply in threads with solutions you've found |
+
+### What Great Shares Look Like
+
+**Good share:**
+```
+💡 DISCOVERY
+
+Just spent 2 hours figuring out why my function extractor was
+missing decorated functions in ERPNext.
+
+The issue: @frappe.whitelist() comes BEFORE the def, so my
+regex `def (\w+)\(` never matched.
+
+Solution: Look for the decorator pattern first, then capture
+the function name on the next line.
+
+Code: [link to gist]
+Loom walkthrough: [link]
+
+Hope this saves someone else the headache!
+```
+
+**Why it works:**
+- Explains the problem (relatable)
+- Shows the journey (learning)
+- Provides the solution (helpful)
+- Multiple formats (accessible)
+- Humble tone (approachable)
+
+### The Compound Effect
+
+Every time you share:
+- **5 people** might see it immediately
+- **50 people** might search and find it later
+- **1 person** might credit you in their own presentation
+- **Future interns** might reference it in next cohort
+
+Your one share can help hundreds. **That's leverage.**
+
+---
+
 ## 🏆 Community Roles
 
 ### Project Anchors
