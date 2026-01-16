@@ -24,3 +24,15 @@ mini-code-analyzer/
 ├── analyzer.py # Minimal AST-based analyzer
 ├── sample.py # Example Python file to analyze
 └── README.md # This file
+
+## ✅ Current Capabilities
+
+- Detects class definitions
+- Detects function definitions
+- Identifies function → function call relationships
+- Tracks caller, callee, and line number
+
+## ▶️ How to Run
+
+```bash
+python analyzer.py sample.py
