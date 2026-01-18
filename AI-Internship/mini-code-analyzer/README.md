@@ -36,3 +36,11 @@ mini-code-analyzer/
 
 ```bash
 python analyzer.py sample.py
+
+---
+
+## 🧭 Learning Context
+
+This analyzer is intentionally minimal and built as part of an AI Engineering Internship.
+Each iteration adds one new concept (AST traversal, call graphs, scope tracking),
+forming the foundation for enterprise-scale code intelligence systems.
