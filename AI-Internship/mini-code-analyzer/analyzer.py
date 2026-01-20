@@ -1,84 +1,136 @@
 import ast
 import sys
 from pathlib import Path
+from collections import defaultdict
+import json
 
 
-def analyze_file(file_path):
-    code = Path(file_path).read_text()
-    tree = ast.parse(code)
+# -------------------------
+# File discovery
+# -------------------------
+def get_python_files(path: str):
+    path = Path(path)
 
-    classes = []
-    functions = []
+    if path.is_file() and path.suffix == ".py":
+        return [path]
 
-    # 🔹 New: structured call graph
-    call_graph = {}
+    if path.is_dir():
+        return list(path.rglob("*.py"))
 
-    current_class = None
+    return []
 
-    for node in ast.walk(tree):
 
-        # Track class context
-        if isinstance(node, ast.ClassDef):
-            classes.append(node.name)
-            current_class = node.name
+# -------------------------
+# AST Analyzer
+# -------------------------
+class CallGraphAnalyzer(ast.NodeVisitor):
+    def __init__(self, module_name: str):
+        self.module = module_name
+        self.class_stack = []
+        self.function_stack = []
+        self.call_graph = defaultdict(set)
 
-        # Track functions and calls INSIDE them
-        if isinstance(node, ast.FunctionDef):
-            functions.append(node.name)
+    def visit_ClassDef(self, node):
+        self.class_stack.append(node.name)
+        self.generic_visit(node)
+        self.class_stack.pop()
 
-            # Build fully qualified caller name
-            if current_class:
-                caller_name = f"{current_class}.{node.name}"
-            else:
-                caller_name = node.name
+    def visit_FunctionDef(self, node):
+        self.function_stack.append(node.name)
 
-            call_graph.setdefault(caller_name, [])
+        caller = self.current_scope()
+        self.call_graph.setdefault(caller, set())
 
-            # Walk inside function body
-            for inner_node in ast.walk(node):
-                if isinstance(inner_node, ast.Call):
+        self.generic_visit(node)
+        self.function_stack.pop()
 
-                    called_function = None
+    def visit_Call(self, node):
+        caller = self.current_scope()
+        callee = self.resolve_callee(node)
 
-                    # helper()
-                    if isinstance(inner_node.func, ast.Name):
-                        called_function = inner_node.func.id
+        if caller and callee:
+            self.call_graph[caller].add(callee)
 
-                    # self.calculate_tax()
-                    elif isinstance(inner_node.func, ast.Attribute):
-                        called_function = inner_node.func.attr
+        self.generic_visit(node)
 
-                    if called_function:
-                        # Build callee name (best-effort)
-                        if current_class:
-                            callee_name = f"{current_class}.{called_function}"
-                        else:
-                            callee_name = called_function
+    def current_scope(self):
+        if not self.function_stack:
+            return None
+        parts = [self.module] + self.class_stack + self.function_stack
+        return ".".join(parts)
 
-                        if callee_name not in call_graph[caller_name]:
-                            call_graph[caller_name].append(callee_name)
+    def resolve_callee(self, node):
+        if isinstance(node.func, ast.Name):
+            return f"{self.module}.{node.func.id}"
 
-    # ---------- Output ----------
-    print("\n📄 File analyzed:", file_path)
-    print("📦 Classes found:", classes)
-    print("🔧 Functions found:", functions)
+        if isinstance(node.func, ast.Attribute):
+            return f"{self.module}.{node.func.attr}"
 
-    print("\n📊 Call Graph")
-    for caller, callees in call_graph.items():
+        return None
+
+
+# -------------------------
+# Analyzer Runner
+# -------------------------
+def analyze_files(path):
+    files = get_python_files(path)
+    if not files:
+        print("❌ No Python files found")
+        return
+
+    global_graph = defaultdict(set)
+
+    for file in files:
+        module_name = file.stem
+        tree = ast.parse(file.read_text())
+
+        analyzer = CallGraphAnalyzer(module_name)
+        analyzer.visit(tree)
+
+        for caller, callees in analyzer.call_graph.items():
+            global_graph[caller].update(callees)
+
+    print_call_graph(global_graph)
+    save_call_graph(global_graph)
+
+
+# -------------------------
+# Output helpers
+# -------------------------
+def print_call_graph(call_graph):
+    print("\n📊 Global Call Graph\n")
+    for caller, callees in sorted(call_graph.items()):
         print(caller)
-        for callee in callees:
+        for callee in sorted(callees):
             print(f"  └── {callee}")
 
     total_calls = sum(len(v) for v in call_graph.values())
-    print(f"\n📊 Summary: {len(classes)} classes, {len(functions)} functions, {total_calls} calls\n")
+    print(f"\n📊 Summary: {len(call_graph)} functions, {total_calls} calls\n")
 
 
+def save_call_graph(call_graph, output_file="call_graph.json"):
+    serializable_graph = {
+        caller: sorted(list(callees))
+        for caller, callees in call_graph.items()
+    }
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(serializable_graph, f, indent=2)
+
+    print(f"💾 Call graph saved to {output_file}")
+
+
+# -------------------------
+# Entry point
+# -------------------------
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python analyzer.py <python_file>")
+        print("Usage: python analyzer.py <file_or_directory>")
         sys.exit(1)
 
-    analyze_file(sys.argv[1])
+    analyze_files(sys.argv[1])
+
+
 
 
 
