@@ -2,20 +2,22 @@
 
 AST-based Static Code Intelligence Tool (Python)
 
-A minimal yet powerful static analysis engine built using Python’s ast module to understand code structure, dependencies, and execution flow — without running the code.
+A minimal yet powerful static analysis engine built using Python’s ast module to understand code structure, dependencies, and execution flow — without executing the code.
 
-This project focuses on learning how real code intelligence tools work internally.
+This project focuses on learning how real-world code intelligence tools (used in AI assistants, refactoring engines, and GraphRAG systems) work internally.
 
 🚀 Why This Project Exists
 
-Modern AI systems (GraphRAG, Copilot-style tools, refactoring engines) cannot rely on raw text alone.
-They need structured understanding of code:
+Modern AI and developer tools cannot rely on raw source code text alone.
+They require structured semantic understanding, such as:
 
 Which functions call which?
 
 How modules depend on each other?
 
 Where are architectural risks like cyclic dependencies?
+
+How can this structure be fed into LLMs reliably?
 
 This project answers those questions using pure static analysis.
 
@@ -24,41 +26,47 @@ This project answers those questions using pure static analysis.
 
 Detects:
 
-Functions
+Top-level functions
 
 Class methods
 
 Cross-module calls
 
-Outputs a fully qualified call graph:
+Outputs fully-qualified call paths, e.g.:
 
 module.Class.method → module.function
 
 2️⃣ Import Dependency Graph
 
-Tracks import and from … import …
+Tracks:
+
+import x
+
+from x import y
 
 Builds a module dependency graph
 
-Differentiates internal vs external structure
+Helps identify tight coupling and architectural boundaries
 
 3️⃣ Multi-File Analysis
 
 Analyze:
 
-Single Python file
+A single Python file
 
-Entire directory (recursively)
+An entire directory (recursively)
 
-Merges results into one global graph
+Merges all results into one global graph
+
+Designed to mirror real enterprise codebases
 
 4️⃣ Cycle Detection (Architecture Risk)
 
-Detects cyclic dependencies using DFS
+Detects cyclic dependencies using DFS graph traversal
 
 Outputs:
 
-Human-readable cycles
+Human-readable cycle paths
 
 Machine-readable cycles.json
 
@@ -80,15 +88,31 @@ Module grouping
 
 Red-highlighted cycle edges
 
-Cycle labels
+Clear directional flow
 
-These diagrams render cleanly in:
-
-Mermaid Live
+Renders cleanly in:
 
 GitHub
 
+Mermaid Live
+
 Documentation systems
+
+🧩 Architecture Overview (Pipeline)
+
+Parse Python files into ASTs
+
+Extract function calls and imports
+
+Normalize nodes into fully-qualified names
+
+Merge results across files
+
+Detect cycles via graph traversal
+
+Export JSON for machines and Mermaid for humans
+
+This mirrors how code intelligence platforms structure their pipelines.
 
 📂 Project Structure
 mini-code-analyzer/
@@ -117,7 +141,7 @@ Step 2: Detect Cycles
 python cycle_detector.py
 
 
-Output:
+Outputs:
 
 Console cycle report
 
@@ -148,66 +172,11 @@ Import Graph
   "c": ["a"]
 }
 
-🧠 How This Fits AI / GraphRAG Systems
+🔁 Cyclic Dependency Example
 
-This analyzer provides structured, machine-readable code context that can be fed into:
+Cyclic dependencies are a major architectural risk in large systems.
+The analyzer detects and visually highlights them.
 
-GraphRAG pipelines
-
-LLM code assistants
-
-Refactoring tools
-
-Legacy modernization systems
-
-Instead of raw text, an LLM receives:
-
-Execution paths
-
-Dependency boundaries
-
-Risk hotspots (cycles)
-
-This drastically improves reasoning quality.
-
-⚠️ Known Limitations (By Design)
-
-No runtime resolution (static only)
-
-No dynamic dispatch inference
-
-No type inference yet
-
-These are intentional to keep the learning surface focused.
-
-🔮 Future Enhancements
-
-Severity ranking of cycles
-
-Cross-repo analysis
-
-Graph embeddings for LLM retrieval
-
-CI integration for architecture checks
-
-🎯 What This Project Demonstrates
-
-Deep understanding of Python AST
-
-Graph theory applied to real systems
-
-Static analysis fundamentals
-
-Tooling mindset (not just scripts)
-
-Readiness for AI / platform engineering work
-
-## 🔁 Cyclic Dependency Example
-
-The analyzer can detect and visualize cyclic dependencies, which are common
-architectural risks in large codebases.
-
-```mermaid
 graph TD
   subgraph a
     "a.func_a"
@@ -225,35 +194,59 @@ graph TD
 
   classDef cycleEdge stroke:red,stroke-width:3px;
 
-## 🏗 Architecture Overview
+🧠 How This Fits AI / GraphRAG Systems
 
-This tool follows a clear static analysis pipeline:
+This project produces structured, machine-readable code context, which can be directly fed into:
 
-1. Parse Python files into ASTs
-2. Extract call relationships and imports
-3. Merge results across multiple files
-4. Detect architectural risks (cycles)
-5. Export graphs for visualization and AI consumption
+GraphRAG pipelines
 
-Each stage produces structured, machine-readable output.
+LLM-based code assistants
 
+Refactoring engines
 
-## 🚫 What This Tool Is Not
+Legacy modernization tools
 
-- Not a runtime tracer
-- Not a type inference engine
-- Not framework-aware (Django, FastAPI, etc.)
+Instead of raw text, an LLM receives:
 
-These are deliberate tradeoffs to focus on static code intelligence fundamentals.
+Execution paths
 
-## 🚫 What This Tool Is Not
+Dependency boundaries
 
-- Not a runtime tracer
-- Not a type inference engine
-- Not framework-aware (Django, FastAPI, etc.)
+Risk hotspots (cycles)
 
-These are deliberate tradeoffs to focus on static code intelligence fundamentals.
+This significantly improves reasoning quality and reliability.
 
+⚠️ Known Limitations (Intentional)
+
+Static analysis only (no runtime resolution)
+
+No dynamic dispatch inference
+
+No type inference (yet)
+
+These trade-offs keep the learning surface focused and explicit.
+
+🔮 Future Enhancements
+
+Severity ranking of cycles
+
+Cross-repository analysis
+
+Graph embeddings for LLM retrieval
+
+CI integration for architecture checks
+
+🎯 What This Project Demonstrates
+
+Deep understanding of Python AST
+
+Graph theory applied to real systems
+
+Static analysis fundamentals
+
+Tooling and platform mindset
+
+Readiness for AI / platform engineering roles
 
 📌 Author
 
