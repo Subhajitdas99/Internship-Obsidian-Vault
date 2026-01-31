@@ -225,6 +225,35 @@ graph TD
 
   classDef cycleEdge stroke:red,stroke-width:3px;
 
+## 🏗 Architecture Overview
+
+This tool follows a clear static analysis pipeline:
+
+1. Parse Python files into ASTs
+2. Extract call relationships and imports
+3. Merge results across multiple files
+4. Detect architectural risks (cycles)
+5. Export graphs for visualization and AI consumption
+
+Each stage produces structured, machine-readable output.
+
+
+## 🚫 What This Tool Is Not
+
+- Not a runtime tracer
+- Not a type inference engine
+- Not framework-aware (Django, FastAPI, etc.)
+
+These are deliberate tradeoffs to focus on static code intelligence fundamentals.
+
+## 🚫 What This Tool Is Not
+
+- Not a runtime tracer
+- Not a type inference engine
+- Not framework-aware (Django, FastAPI, etc.)
+
+These are deliberate tradeoffs to focus on static code intelligence fundamentals.
+
 
 📌 Author
 
