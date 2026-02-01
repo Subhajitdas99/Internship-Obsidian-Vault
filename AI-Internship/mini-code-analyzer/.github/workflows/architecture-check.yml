@@ -1,0 +1,44 @@
+name: Architecture Quality Gate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  architecture-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run static analyzer
+        run: |
+          cd AI-Internship/mini-code-analyzer
+          python analyzer.py examples/cycle_project
+
+      - name: Detect dependency cycles
+        run: |
+          cd AI-Internship/mini-code-analyzer
+          python cycle_detector.py
+
+      - name: Generate architecture insights
+        run: |
+          cd AI-Internship/mini-code-analyzer
+          python architecture_insights.py
+
+      - name: Enforce architecture quality gate
+        run: |
+          cd AI-Internship/mini-code-analyzer
+          python architecture_gate.py
