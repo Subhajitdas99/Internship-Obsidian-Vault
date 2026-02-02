@@ -1,13 +1,28 @@
+# -------------------------
 # Local tooling
+# -------------------------
 .obsidian/
 
-# Python
+# -------------------------
+# Python cache
+# -------------------------
 __pycache__/
 *.pyc
 
-# Generated outputs
-*.json
+# -------------------------
+# Generated diagrams (can be re-created)
+# -------------------------
 diagrams/
 
-# Experiments
-examples/
+# -------------------------
+# LLM-generated outputs (derived artifacts)
+# -------------------------
+llm_context.txt
+llm_nodes.json
+
+# -------------------------
+# OS / Editor noise
+# -------------------------
+.DS_Store
+Thumbs.db
+
